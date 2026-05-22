@@ -2,6 +2,8 @@
 
 Consistency is a minimal, polished, and highly interactive Habit Tracker web application built using **React**, **Vite**, and **Tailwind CSS**. It is inspired by the design principles of productivity products like Linear, Notion, and GitHub Projects: ultra-clean grays, subtle accents, keyboard efficiency, and absolute clarity.
 
+live demo :https://habit-tracker-jet-iota.vercel.app/
+
 ![Consistency Habit Tracker](https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1200&q=80)
 
 ## Features
