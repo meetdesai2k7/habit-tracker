@@ -66,9 +66,9 @@ To maintain a clean and reviewable history, we recommend structuring your commit
    - Wire central hooks, localStorage sync, and Arrow Key grid traversal.
 6. **`style: apply premium dark-mode styles, scrollbars and checkbox pops`**
 
-# ANSWERS.md
 
-## 1. How to run
+
+## 5. How to run
 
 ### Local Setup
 
@@ -108,7 +108,7 @@ https://habit-tracker-jet-iota.vercel.app/
 
 ---
 
-# 2. Stack & design choices
+# 6. Stack & design choices
 
 I chose React + Vite + Tailwind CSS because the application is highly interactive and state-driven. React made it easier to manage habits, week navigation, streak calculations, and persistence through reusable components and hooks. Vite kept development fast and lightweight, while Tailwind CSS helped quickly build a responsive and consistent UI.
 
@@ -122,7 +122,7 @@ For streak calculation, the current streak counts consecutive completed days up 
 
 ---
 
-# 3. Responsive & accessibility
+# 7. Responsive & accessibility
 
 The app adapts differently across screen sizes instead of simply shrinking the layout.
 
@@ -143,7 +143,7 @@ One accessibility improvement I knowingly skipped was advanced screen reader ann
 
 ---
 
-# 4. AI usage
+# 8. AI usage
 
 I used AI tools during development mainly to accelerate UI ideation and frontend structuring.
 
@@ -168,7 +168,7 @@ Additionally, I manually reviewed the streak logic and localStorage persistence 
 
 ---
 
-# 5. Honest gap
+# 9. Honest gap
 
 One area that still needs improvement is long-term habit analytics and organization. While the weekly tracking experience is functional and polished, users currently cannot reorder habits or view long-term progress trends.
 
