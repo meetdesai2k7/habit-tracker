@@ -65,40 +65,120 @@ To maintain a clean and reviewable history, we recommend structuring your commit
 5. **`feat: integrate keyboard cell navigation and persistence in App.jsx`**
    - Wire central hooks, localStorage sync, and Arrow Key grid traversal.
 6. **`style: apply premium dark-mode styles, scrollbars and checkbox pops`**
-   - Refine `index.css` transitions, custom scrollbars, and aesthetic layout details.
+
+# ANSWERS.md
+
+## 1. How to run
+
+### Local Setup
+
+Clone the repository:
+
+```bash
+git clone https://github.com/meetdesai2k7/habit-tracker.git
+```
+
+Navigate into the project:
+
+```bash
+cd habit-tracker
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
+
+```bash
+npm run dev
+```
+
+Open in browser:
+
+```txt
+http://localhost:5173
+```
+
+### Live Deployment
+
+https://habit-tracker-jet-iota.vercel.app/
 
 ---
 
-## 5. Deployment Steps for Vercel
+# 2. Stack & design choices
 
-Vercel detects Vite applications automatically and configures optimal production build pipelines.
+I chose React + Vite + Tailwind CSS because the application is highly interactive and state-driven. React made it easier to manage habits, week navigation, streak calculations, and persistence through reusable components and hooks. Vite kept development fast and lightweight, while Tailwind CSS helped quickly build a responsive and consistent UI.
 
-### Option A: Vercel CLI (Fastest Local Deploy)
-1. Install Vercel globally:
-   ```bash
-   npm install -g vercel
-   ```
-2. Run the deployment command inside the root folder:
-   ```bash
-   vercel
-   ```
-3. Complete the interactive setup:
-   - *Set up and deploy?* **Yes**
-   - *Link to existing project?* **No**
-   - *What's your project's name?* **consistency-habit-tracker**
-   - *In which directory is your code located?* **./**
-   - *Want to modify settings?* **No** (Vite default presets work perfectly)
-4. For production launch, deploy with:
-   ```bash
-   vercel --prod
-   ```
+I decided to start the week on Monday because most productivity and planning tools use Monday-first layouts, making weekly patterns easier to scan.
 
-### Option B: GitHub Integration (Continuous Deployment)
-1. Push the repository to GitHub.
-2. Log in to the [Vercel Dashboard](https://vercel.com).
-3. Click **Add New** > **Project** and select your GitHub repository.
-4. Keep the default presets:
-   - **Framework Preset**: `Vite`
-   - **Build Command**: `npm run build`
-   - **Output Directory**: `dist`
-5. Click **Deploy**. Vercel will automatically build and re-deploy every time you push to your main branch!
+One important UI decision was keeping the weekly grid horizontally scrollable on mobile screens instead of shrinking the cells. Compressing the grid reduced readability and made touch interactions uncomfortable, so horizontal scrolling preserved comfortable tap targets and visual clarity.
+
+Another design decision was visually highlighting today’s column using a subtle accent background and border. Since habit trackers rely heavily on quick scanning, this helps users immediately focus on the current day without making the interface visually overwhelming.
+
+For streak calculation, the current streak counts consecutive completed days up to today, or up to yesterday if today is not yet completed. This felt more natural because users should not instantly lose visible progress early in the day before completing a habit.
+
+---
+
+# 3. Responsive & accessibility
+
+The app adapts differently across screen sizes instead of simply shrinking the layout.
+
+On smaller screens (around 360px):
+- the weekly grid becomes horizontally scrollable
+- habit names remain visible using sticky positioning
+- touch targets remain comfortable for tapping
+- spacing is preserved for readability
+
+On larger screens (1440px and above):
+- the layout expands with more whitespace
+- the grid becomes easier to scan visually
+- hover states and interactions improve desktop usability
+
+One accessibility improvement I implemented was keyboard-friendly navigation and visible focus states for interactive elements like buttons and checkboxes. I also added aria-labels to improve screen reader support.
+
+One accessibility improvement I knowingly skipped was advanced screen reader announcements for dynamic streak updates and week transitions. Given the time constraints, I prioritized layout clarity, responsiveness, and keyboard accessibility first.
+
+---
+
+# 4. AI usage
+
+I used AI tools during development mainly to accelerate UI ideation and frontend structuring.
+
+Tools used:
+- Antigravity
+- ChatGPT
+
+AI helped with:
+- initial React + Tailwind project scaffolding
+- responsive layout ideas
+- component organization
+- interaction polish suggestions
+- accessibility suggestions
+
+I manually reviewed and refined the generated output rather than using it unchanged.
+
+One example was the mobile layout behavior. The initial generated version compressed the weekly grid too aggressively on small screens, making interactions feel cramped. I changed the implementation to use horizontal scrolling while preserving larger tap targets and readable spacing.
+
+I also simplified some generated styling choices to reduce visual clutter and improve information hierarchy so the interface felt calmer and easier to scan.
+
+Additionally, I manually reviewed the streak logic and localStorage persistence behavior to ensure consistency during reloads and week navigation.
+
+---
+
+# 5. Honest gap
+
+One area that still needs improvement is long-term habit analytics and organization. While the weekly tracking experience is functional and polished, users currently cannot reorder habits or view long-term progress trends.
+
+With another day, I would improve this by:
+- adding drag-and-drop habit reordering
+- implementing lightweight analytics or progress summaries
+- refining transition animations between weeks
+- improving screen reader support further
+- adding optional dark mode support
+
+I would also spend more time polishing micro-interactions and refining motion consistency across the interface.
+   - Refine `index.css` transitions, custom scrollbars, and aesthetic layout details.
+
